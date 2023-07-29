@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
+</head>
+
+<body class="p-10">
+    <h1 class="text-4xl mb-6">Add Movie Data</h1>
+    <a href="viewMovieData">viewMovieData</a>
+    <form action="/addMovieData" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data" id="movieForm">
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieName">
+                Movie Name
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="movieName" id="movieName">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieBudget">
+                Movie Budget
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="movieBudget" id="movieBudget">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieGenere">
+                Movie Genere
+            </label>
+            <div class="flex flex-wrap">
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Action">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Action</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Comedy">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Comedy</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Drama">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Drama</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Horror">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Horror</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Romance">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Romance</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="checkbox" name="movieGenere[]" id="movieGenere" value="Thriller">
+                    <label class="text-sm font-medium text-gray-700" for="movieGenere">Thriller</label>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieReleaseDate">
+                Movie Release Date
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" name="movieReleaseDate" id="movieReleaseDate">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieDirector">
+                Movie Director
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="movieDirector" id="movieDirector">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieDescription">
+                Movie Description
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="movieDescription" id="movieDescription" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieImage">
+                Movie Image
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="file" name="movieimage" id="movieImage">
+        </div>
+        <!-- move zone -->
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieImage">
+                Movie Zone
+            </label>
+            <div class="flex flex-wrap">
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="radio" name="movieZone" id="movieZone" value="national">
+                    <label class="text-sm font-medium text-gray-700" for="movieZone">National</label>
+                </div>
+                <div class="w-1/3">
+                    <input class="mr-2 leading-tight" type="radio" name="movieZone" id="movieZone" value="international">
+                    <label class="text-sm font-medium text-gray-700" for="movieZone">international</label>
+                </div>
+            </div>
+        </div>
+         <!-- movie rating with select option -->
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="movieRating">
+                Movie Imdb
+            </label>
+            <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="movieImdb" id="movieRating">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>s
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+        </div>
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Add Movie
+            </button>
+        </div>
+    </form>
+    
+    <script>
+        const form = document.querySelector('#movieForm');
+        form.addEventListener('submit', validateForm);
+    
+        function validateForm(event) {
+            event.preventDefault(); 
+    
+            const movieName = document.querySelector('#movieName').value;
+            const movieBudget = document.querySelector('#movieBudget').value;
+            const movieGenere = document.querySelectorAll('[name="movieGenere[]"]:checked');
+            const movieReleaseDate = document.querySelector('#movieReleaseDate').value;
+            const movieDirector = document.querySelector('#movieDirector').value;
+            const movieDescription = document.querySelector('#movieDescription').value;
+            const movieImage = document.querySelector('#movieImage').value;
+    
+            if (
+                movieName === '' ||
+                movieBudget === '' ||
+                movieGenere.length === 0 ||
+                movieReleaseDate === '' ||
+                movieDirector === '' ||
+                movieDescription === '' ||
+                movieImage === ''
+            ) {
+                alert('Please fill out all fields.'); 
+            } else {
+                form.submit(); 
+            }
+        }
+    </script>
+    
+</body>
+

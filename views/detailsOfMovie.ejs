@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
+</head>
+
+<body class="bg-gray-200 p-10">
+    <div class="max-w-6xl mx-auto bg-white rounded-md shadow-md">
+        <div class="px-6 py-8">
+            <h1 class="text-4xl mb-6 font-bold text-gray-800">Movie Details</h1>
+            <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                <div class="w-full md:w-2/3">
+                    <table class="table-auto w-full">
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Title:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieName %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Genre:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieGenere %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Release Date:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieReleaseDate %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Director:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieDirector %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Description:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieDescription %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">IMDB:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieImdb %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Budget:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieBudget %></td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2 font-bold text-gray-700">Zone:</td>
+                                <td class="border px-4 py-2"><%= recordofmovie.movieZone %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="w-full md:w-1/3 mt-6 md:mt 0">
+                    <% const imagePath = "/media/movieimage/" + recordofmovie.movieimage; %>
+                    <img src="<%= imagePath %>" alt="movie image" class="w-full rounded-md">
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <a href="/viewMovieData" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back</a>    
+            </div>
+        </div>
+    </div>
+</body>
+
